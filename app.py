@@ -2,23 +2,27 @@ import streamlit as st
 from PIL import Image
 import pickle
 
+#Customize page icon and title
+st.set_page_config(page_title='FinoHub®', page_icon='💰')
 
+# loading the model
 model = pickle.load(open('log_reg.pkl', 'rb'))
 
 def run():
-    st.title("Bank Loan Prediction")
-    st.markdown("Welcome! To check eligibility of bank loans, you must need to enter the following detail. From given details the AI will calculate and display the result at the bottom of this page and from which you will get your loan request results.")
+    st.title("FINOHUB®")
+    st.markdown("Welcome to FinoHub®, it is a loan eligibilty prediction system which is driven by AI and Machine Learning. Just submit your personal details below and check your loan eligibity in one click.")
     img1 = Image.open('images/logo.jpg')
     img1 = img1.resize((200,200))
     st.image(img1,use_column_width=False)
     
 
     ## Account No
-    account_no = st.text_input('Account number')
+    account_no = st.text_input('Account Number')
 
     ## Full Name
     fn = st.text_input('Full Name')
 
+    # hide footer and menu bar in streamlit
     st.markdown(""" <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
@@ -60,16 +64,16 @@ def run():
     cred = st.selectbox("Credit Score",cred_options, format_func=lambda x: cred_display[x])
 
     ## Applicant Monthly Income
-    mon_income = st.number_input("Applicant's Monthly Income(in thousands)",value=0)
+    mon_income = st.number_input("Applicant's Monthly Income(in hundreds)",value=0)
 
     ## Co-Applicant Monthly Income
-    co_mon_income = st.number_input("Co-Applicant's Monthly Income(in thousands)",value=0)
+    co_mon_income = st.number_input("Co-Applicant's Monthly Income(in hundreds)",value=0)
 
     ## Loan AMount
-    loan_amt = st.number_input("Loan Amount(in thousands)",value=0)
+    loan_amt = st.number_input("Loan Amount(in milions)",value=0)
 
     ## loan duration
-    dur_display = ['2 Month','6 Month','8 Month','1 Year','16 Month']
+    dur_display = ['2 Months','6 Months','8 Months','1 Year','16 Months']
     dur_options = range(len(dur_display))
     dur = st.selectbox("Loan Duration",dur_options, format_func=lambda x: dur_display[x])
 
@@ -102,7 +106,7 @@ def run():
                 "Hello: " + fn +" || "
                 "Account number: "+account_no 
             )
-            st.success('Congratulations!! YOUR APPLICATION HAS BEEN ACCEPTED BY THE BANK 🎉.')
+            st.success('Congratulations!! YOUR ARE ELIGIBLE FOR A LOAN FROM THE BANK🎉.')
             
 
 run()
