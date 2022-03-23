@@ -1,62 +1,28 @@
-# from flask import Flask, request, jsonify, render_template
-# import pickle
-# import numpy as np
-
-
-# app = Flask(__name__)
-# model = pickle.load(open("log_reg.pkl", "rb"))
-
-
-# @app.route("/")
-# def home():
-#     return render_template("index.html")
-
-
-# @app.route("/predict", methods=["POST"])
-# def predict():
-
-#     int_features = [int(x) for x in request.form.values()]
-#     final_features = [np.array(int_features)]
-#     prediction = model.predict(final_features)
-
-#     output = round(prediction[0], 2)
-#     if int(output) == 1:
-#         pred = 'Your loan application has been approved'
-#     else:
-#         pred = 'Your loan application has been denied'
-#     return render_template("index.html", prediction_text=pred)
-
-
-# @app.route('/results', methods=['POST'])
-# def results():
-
-#     data = request.get_json(force=True)
-#     prediction = model.predict([np.array(list(data.values()))])
-
-#     output = prediction[0]
-#     return jsonify(output)
-
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
 import streamlit as st
-# from PIL import Image
+from PIL import Image
 import pickle
 
 
 model = pickle.load(open('log_reg.pkl', 'rb'))
 
 def run():
-    # img1 = Image.open('bank.png')
-    # img1 = img1.resize((156,145))
-    # st.image(img1,use_column_width=False)
     st.title("Bank Loan Prediction")
+    st.markdown("Welcome! To check eligibility of bank loans, you must need to enter the following detail. From given details the AI will calculate and display the result at the bottom of this page and from which you will get your loan request results.")
+    img1 = Image.open('images/logo.jpg')
+    img1 = img1.resize((200,200))
+    st.image(img1,use_column_width=False)
+    
 
     ## Account No
     account_no = st.text_input('Account number')
 
     ## Full Name
     fn = st.text_input('Full Name')
+
+    st.markdown(""" <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+    </style> """, unsafe_allow_html=True)
 
     ## For gender
     gen_display = ('Female','Male')
@@ -94,13 +60,13 @@ def run():
     cred = st.selectbox("Credit Score",cred_options, format_func=lambda x: cred_display[x])
 
     ## Applicant Monthly Income
-    mon_income = st.number_input("Applicant's Monthly Income($)",value=0)
+    mon_income = st.number_input("Applicant's Monthly Income(in thousands)",value=0)
 
     ## Co-Applicant Monthly Income
-    co_mon_income = st.number_input("Co-Applicant's Monthly Income($)",value=0)
+    co_mon_income = st.number_input("Co-Applicant's Monthly Income(in thousands)",value=0)
 
     ## Loan AMount
-    loan_amt = st.number_input("Loan Amount",value=0)
+    loan_amt = st.number_input("Loan Amount(in thousands)",value=0)
 
     ## loan duration
     dur_display = ['2 Month','6 Month','8 Month','1 Year','16 Month']
@@ -125,16 +91,18 @@ def run():
         lc = [str(i) for i in prediction]
         ans = int("".join(lc))
         if ans == 0:
-            st.error(
-                "Hello: " + fn +", "
-                "Account number: "+account_no +' || '
-                'YOU WILL NOT GET LOAN FROM THE BANK :('
+            st.warning(
+                "Hello, " + fn +" ||  "
+                "Account number: "+account_no 
             )
+            st.error('Sorry, YOU WILL NOT GET LOAN FROM THE BANK :(')
+            
         else:
-            st.success(
-                "Hello: " + fn +", "
-                "Account number: "+account_no +' || '
-                'Congratulations!! YOUR APPLICATION HAS BEEN ACCEPTED BY THE BANK 🎉.'
+            st.warning(
+                "Hello: " + fn +" || "
+                "Account number: "+account_no 
             )
+            st.success('Congratulations!! YOUR APPLICATION HAS BEEN ACCEPTED BY THE BANK 🎉.')
+            
 
 run()
