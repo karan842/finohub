@@ -1,0 +1,31 @@
+ROAD TO MAKE FINOHUB...
+
+1. Collect the data from Kaggle: Done
+2. Open jupyternotebook and load the data: Done
+3. EDA and Visualization(univariate, bivariate): Done
+4. Data cleaning and wrangling (deal with missing data): Done
+5. Detect outliers: Done
+
+**Performed Log transformation on the data but there is 
+no imporvement in accuracy of the model. Also, 
+after log transformation when I inserted Loan Amount value
+same as original data it couldn't identify values.**
+
+6. Encode the data: Done
+7. Train the model with classification algos: Done
+8. Perform Hyperparameter tuning: Done
+9. Evalute the models and choose the best one: Done
+10.  Create Streamlit app: Done
+12. Test with different inputs: Done
+
+**
+# After trying many combinations, I found details that will givr us acceptance;
+# [Male, Yes, No, Graduate, Job, Urban, Above 500, 5598, 0, 120, 1 Year]
+
+**
+
+13. Push on Git and github: Done
+14. Dockerized the app
+15. CI/CD 
+16. Deploy
+17. Tableau Dashboard.
