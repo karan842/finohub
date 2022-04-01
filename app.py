@@ -3,7 +3,7 @@ from PIL import Image
 import pickle
 
 #Customize page icon and title
-st.set_page_config(page_title='FinoHub® | Loan Eligibility Prediction', page_icon='💰')
+st.set_page_config(page_title='FinoHub® | Loan Eligibility Prediction', page_icon='media/FinoHub.png')
 
 # loading the model
 model = pickle.load(open('log_reg.pkl', 'rb'))
@@ -11,10 +11,14 @@ model = pickle.load(open('log_reg.pkl', 'rb'))
 def run():
     st.write('<style>div.block-container{padding-top:2rem;}</style>', unsafe_allow_html=True)
     st.title("FINOHUB®")
-    st.markdown("Welcome to FinoHub®, it is a loan eligibilty prediction system which is driven by AI and Machine Learning. Just submit your personal details below and check your loan eligibity in one click.")
-    img1 = Image.open('images/logo.jpg')
-    img1 = img1.resize((200,200))
-    st.image(img1,use_column_width=False)
+    st.markdown("Welcome to FinoHub®, it is a loan eligibilty prediction system which is driven by AI. Just submit your personal details below and check your loan eligibity in one click.")
+    st.warning("WARNING! Do not share your Debit/Credit card number, CVV and OTP to any fraud message or call. We are not requesting this types of information.")
+    # img1 = Image.open('images/new.png')
+    # img1 = img1.resize((700,200))
+    # st.image(img1,use_column_width=False)
+    vide_file = open('media\Loan eligibility calculator.mp4','rb')
+    video_bytes = vide_file.read()
+    st.video(video_bytes)
     
 
     ## Account No
@@ -71,7 +75,7 @@ def run():
     co_mon_income = st.number_input("Co-Applicant's Monthly Income(in $)",value=0)
 
     ## Loan AMount
-    loan_amt = st.number_input("Loan Amount(in thousands)",value=0)
+    loan_amt = st.number_input("Loan Amount(in thousands($))",value=0)
 
     ## loan duration
     dur_display = ['2 Months','6 Months','8 Months','1 Year','16 Months']
