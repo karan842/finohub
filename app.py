@@ -1,21 +1,18 @@
 import streamlit as st
-from PIL import Image
 import pickle
 
 #Customize page icon and title
 st.set_page_config(page_title='FinoHub® | Loan Eligibility Prediction', page_icon='media/FinoHub.png')
 
 # loading the model
-model = pickle.load(open('log_reg.pkl', 'rb'))
+model = pickle.load(open('ML model/log_reg.pkl', 'rb'))
 
 def run():
     st.write('<style>div.block-container{padding-top:2rem;}</style>', unsafe_allow_html=True)
     st.title("FINOHUB®")
     st.markdown("#### Welcome to FinoHub®, it is a loan eligibility prediction system which is driven by AI. Just submit your personal details below and check your loan eligibility in one click.")
     st.warning("WARNING! Do not share your Debit/Credit card number, CVV and OTP to any fraud message or call. We are not requesting this types of information.")
-    # img1 = Image.open('images/new.png')
-    # img1 = img1.resize((700,200))
-    # st.image(img1,use_column_width=False)
+    # Video intro
     vide_file = open('media/fino.mp4','rb')
     video_bytes = vide_file.read()
     st.video(video_bytes)
