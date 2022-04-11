@@ -1,0 +1,10 @@
+data/
+media/
+reports/
+*.vscode/
+*.pytest_cache/
+*.ipynb_checkpoints/
+Loan-status-prediction.ipynb
+*.gitignore
+
+
