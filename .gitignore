@@ -1,4 +1,4 @@
-*.ipynb_checpoints
+*.ipynb_checkpoints
 *.pytest_cache
 *.vscode
 *.venv
