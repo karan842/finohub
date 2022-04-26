@@ -2,6 +2,7 @@
 <img src='https://github.com/karan842/finohub/blob/master/media/FinoHub.png' height=290px width=300px></img>
 
 - AI driven loan eligibility prediction webapp💵🤖
+[Click Here](http://ec2-52-87-167-90.compute-1.amazonaws.com:8501/)
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
@@ -25,7 +26,7 @@ FinoHub is made by Data Science and business analytical pipeline;
 4. Understands the requirement of webapp
 
 *Phase 2*:
--  Exploring and clening the data
+-  Exploring and clening the data:
 1. Performing exploratory data analysis and data visualization to gather and gain some useful/important informations from the raw data.
 2. Analyzing the data into univariate and bivariate fashion to see the relation between different features from the data.
 3. Finding some strong relatioships and importance between independent and dependent features.
@@ -33,8 +34,34 @@ FinoHub is made by Data Science and business analytical pipeline;
 5. Did all these tasks with Python libraries (numpy, pandas, matplotlib, and seaborn).
 
 *Phase 3*:
-- Data cleaning and preparation
+- Data cleaning and preparation:
 1. Encoding all ordinal, nominal, and, numerical variables into numbers(i.e. 1s or 0s or 2s or 3s)
 2. Dealing with null/missing values and imputing them with mean or mode.
 3. Analyzing some statisical part of the data such as Handling outiers and eliminating them.
 4. Making data ready for Machine Learning lifecycle.
+
+*Phase 4*:
+- Training data with Machine Learning:
+1. Splitting the data into train and test 0.25 splittnig rate.
+2. Using different ML classification algorithms and to avoid overfitting using Cross Validation technique.
+3. To gaining more accuracy using *hyperparameter tuning* i.e. **GridSearchCV**.
+4. Training the data with best parameters and again using Cross Validation(usinig mean of 5 folds).
+5. Evaluating the classification algorithms(on training data) with *ROC_CURVE & ROC_AUC_SCORE* and selecting top performers and eliminating bad performers.
+6. Again evaluating well performed classifiers with *ROC_CURVE & ROC_AUC_SCOREbut now with test data.
+7. Selecting the winner and runner-up models and evaluating with *Classification report, precision-recall curve & confusion matrix*.
+8. Saving the both the models and using the winner model(classification algorithm) for further process.
+
+*Phase 5*:
+- Creating Streamlit based webapp:
+1. Writing code for FinoHub webapp which is created by Python-Streamlit library with interactive UI
+2. Inserting ML model in software development and creating fields as input and summarizing into prediction state.
+3. Running the webapp and trying with different inputs.
+4. Making FinoHub logo, cover image, and intro video with the help of Canva.
+
+*Phae 6*:
+- Deployment for end users:
+1. Containerization of Streamlit web app with the help of Docker.
+2. Building a docker image and running it in a container.
+3. Pushing docker image into docker registry.
+4. Pulling it again and running in local machine.
+5. Deployed the webapp on AWS E2 instance
