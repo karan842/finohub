@@ -47,7 +47,7 @@ FinoHub is made by Data Science and business analytical pipeline;
 3. To gaining more accuracy using *hyperparameter tuning* i.e. **GridSearchCV**.
 4. Training the data with best parameters and again using Cross Validation(usinig mean of 5 folds).
 5. Evaluating the classification algorithms(on training data) with *ROC_CURVE & ROC_AUC_SCORE* and selecting top performers and eliminating bad performers.
-6. Again evaluating well performed classifiers with *ROC_CURVE & ROC_AUC_SCOREbut now with test data.
+6. Again evaluating well performed classifiers with *ROC_CURVE & ROC_AUC_SCORE* but now with test data.
 7. Selecting the winner and runner-up models and evaluating with *Classification report, precision-recall curve & confusion matrix*.
 8. Saving the both the models and using the winner model(classification algorithm) for further process.
 
@@ -64,4 +64,28 @@ FinoHub is made by Data Science and business analytical pipeline;
 2. Building a docker image and running it in a container.
 3. Pushing docker image into docker registry.
 4. Pulling it again and running in local machine.
-5. Deployed the webapp on AWS E2 instance
+5. Deployed the webapp on AWS E2 instance with Ubuntu Server.
+6. Accessed a webapp through the AWS CLi and PuTTY CLi.
+7. Running webapp in a EC2 instance.
+8. Closing the EC2 instance and created a webapp in AWS Elastic Beanstalk with Docker environments.
+9. Sharing the FinoHub webapp into public.
+
+*Phase 7*:
+- Creating an analytical report with Tableau dashboard and key observations.
+### [Click here](https://docs.google.com/document/d/1tY9XMglj3yZSzz0tw56NR4U3hlmDbNG40aX4rNDUqZE/edit?usp=sharing) to see the first analytical report of FinoHub.
+--------------------------------
+# Post Script📜:
+- Well as you can see that [FinoHub](http://ec2-52-87-167-90.compute-1.amazonaws.com:8501/) is made by dummy dataset because it is just my final project of computer science and for learning the data science lifecycle and machine learning pipeline with AWS. I created this with scratch and I've learned many more things about Data Science. If any you can find any bug or improvement kindly contact me:
+
+## Contact📬:
+
+- My Gmail: karanshingde@gmail.com
+
+- [My Twitter](https://twitter.com/KuchBhiKaran)
+
+- [My LinkedIn](linkedin.com/in/karan-shingde-75a062217)
+--------------------------
+## Special Thanks(references) 🤝:
+- GitHub, StackOverFlow, Towards Data Science, and, Analytics Vidhya
+---------------------
+# Thank You😉
