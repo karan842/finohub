@@ -2,7 +2,7 @@
 <img src='https://github.com/karan842/finohub/blob/master/media/FinoHub.png' height=290px width=300px></img>
 
 - AI driven loan eligibility prediction webapp💵🤖
-[Click Here](http://ec2-52-87-167-90.compute-1.amazonaws.com:8501/)
+[Click Here](http://finohub-env-1.eba-fcih6jie.us-east-1.elasticbeanstalk.com/)
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
@@ -75,7 +75,7 @@ FinoHub is made by Data Science and business analytical pipeline;
 ### [Click here](https://docs.google.com/document/d/1tY9XMglj3yZSzz0tw56NR4U3hlmDbNG40aX4rNDUqZE/edit?usp=sharing) to see the first analytical report of FinoHub.
 --------------------------------
 # Post Script📜:
-- Well as you can see that [FinoHub](http://ec2-52-87-167-90.compute-1.amazonaws.com:8501/) is made by dummy dataset because it is just my final project of computer science and for learning the data science lifecycle and machine learning pipeline with AWS. I created this with scratch and I've learned many more things about Data Science. If any you can find any bug or improvement kindly contact me:
+- Well as you can see that [FinoHub](http://finohub-env-1.eba-fcih6jie.us-east-1.elasticbeanstalk.com/) is made by dummy dataset because it is just my final project of computer science and for learning the data science lifecycle and machine learning pipeline with AWS. I created this with scratch and I've learned many more things about Data Science. If any you can find any bug or improvement kindly contact me:
 
 ## Contact📬:
 
