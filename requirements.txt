@@ -2,5 +2,5 @@ streamlit
 scikit-learn
 numpy
 pandas
-matplotlib
-seaborn
+Jinja2>=3.0
+markupsafe==2.1.1
