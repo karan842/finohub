@@ -60,7 +60,7 @@ FinoHub is made by Data Science and business analytical pipeline;
 
 *Phae 6*:
 - Deployment for end users:
-1. Containerization of Streamlit web app with the help of Docker.
+1. Containerization of Streamlit web app with the help of Docker. Find FinoHub's official docker image [here](https://hub.docker.com/repository/docker/karan842/finohub)
 2. Building a docker image and running it in a container.
 3. Pushing docker image into docker registry.
 4. Pulling it again and running in local machine.
