@@ -1,5 +1,4 @@
 data/
-media/
 reports/
 *.vscode/
 *.pytest_cache/
